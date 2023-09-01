@@ -23,7 +23,7 @@ function opt(use_event, proxy) {
 
     tmp.length = 1;  // Here the compiler expects that it'll transition but at runtime it'll fail due to the setter from String Object.
     //length by default is at object butterfly address + 0x0 0xfffe000000000001
-    //I believe a0 - a5 will be out of line properties  
+    //I believe length , and a0 - a4 will be in line properties  
     tmp.a0 = 0x1111; //inline property "Object butterfly address + 0x8 right after length address" 0xfffe000000001111
     tmp.a1 = 0x2222; //inline property "Object butterfly address + 0x10" 0xfffe000000002222
     tmp.a2 = 0x3333; //inline property "Object butterfly address + 0x18" 0xfffe000000003333
