@@ -132,8 +132,7 @@ function main() {
     setTimeout(() => {
         const value = opt(/* use_event */ true, proxy);
         //value = tmp.a5 aka "ool property tmp butterfly - 0x10"
-        // Should crash here my reasoning of guess is because tmp.a5 to compiler is looked at as a regular object sharing the same butterfly
-        // if so remember inline property writes start at
+        // Should crash here my reasoning of guess is because tmp.a5 to compiler is looked at as a regular object sharing the same butterfly or either overlapping
         //print(describe(value))
         value = 1234; //tmp[26] indice gets overwritten here for some reason
         print(describe(value))
